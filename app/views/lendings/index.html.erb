@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lendings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Nickname</th>
+      <th>Mailing address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Ssn</th>
+      <th>Passport</th>
+      <th>Visa</th>
+      <th>Assistant</th>
+      <th>Manager</th>
+      <th>Creator</th>
+      <th>Create date</th>
+      <th>Open date</th>
+      <th>Prelim date</th>
+      <th>Appraisal date</th>
+      <th>Inspection date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lendings.each do |lending| %>
+      <tr>
+        <td><%= lending.Name %></td>
+        <td><%= lending.NickName %></td>
+        <td><%= lending.Mailing_Address %></td>
+        <td><%= lending.Email %></td>
+        <td><%= lending.Phone %></td>
+        <td><%= lending.SSN %></td>
+        <td><%= lending.Passport %></td>
+        <td><%= lending.Visa %></td>
+        <td><%= lending.Assistant %></td>
+        <td><%= lending.Manager %></td>
+        <td><%= lending.Creator %></td>
+        <td><%= lending.Create_Date %></td>
+        <td><%= lending.Open_Date %></td>
+        <td><%= lending.Prelim_Date %></td>
+        <td><%= lending.Appraisal_Date %></td>
+        <td><%= lending.Inspection_Date %></td>
+        <td><%= link_to 'Show', lending %></td>
+        <td><%= link_to 'Edit', edit_lending_path(lending) %></td>
+        <td><%= link_to 'Destroy', lending, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lending', new_lending_path %>
